@@ -1,33 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
 
 function App() {
+  let [item,setItem] = React.useState([]);
+  const clickHandler = () =>{
+    setItem([
+    {title:"green", id:1},
+    {title:"demonic", id:2},
+    {title:"thunder", id:3},
+    {title:"ice", id:4}
+    ])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a 
-          className="App-link"
-          href="https://google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-            Google
-        </a>
-      </header>
+      <h1>Item List</h1>
+      <button onClick={clickHandler}>Click Me</button>
+      {item.map((e) =>(
+        <div key={e.id}>
+          <li>{e.title}</li>
+        </div>
+      ))}
     </div>
-  );
+  )
 }
 
 export default App;
