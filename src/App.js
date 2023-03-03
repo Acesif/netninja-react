@@ -11,6 +11,12 @@ function App() {
     {title:"ice", id:4}
     ])
   }
+  const removeItem = (id) =>{
+    return setItem((prevItem)=>
+      prevItem.filter((i) => {
+        return i.id !== id;
+    }))
+  }
   return (
     <div className="App">
       <h1>Item List</h1>
@@ -18,6 +24,7 @@ function App() {
       {item.map((e) =>(
         <div key={e.id}>
           <li>{e.title}</li>
+          <button onClick={() => removeItem(e.id)}>Delete</button>
         </div>
       ))}
     </div>
