@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.title{
+  border: 1px solid gray;
+  padding: 2rem 5rem;
+  background-color: aliceblue;
+}
+.subtitle{
+  margin-top: -1rem;
+}
+.btn{
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+li{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  list-style: none;
+}
+.delete{
+  background-color: rgb(255, 57, 57);
+  padding: 0.5rem 1rem;
+  color: antiquewhite;
+  border: none;
+}
+.box{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid black;
+}

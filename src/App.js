@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react'
+import Title from './components/Title'
 
-function App() {
+export default function App() {
   let [show,setShow] = React.useState(false);
   let [item,setItem] = React.useState([
     {title:"green", id:1},
@@ -12,21 +13,19 @@ function App() {
   const removeItem = (id) =>{
     return setItem((prevItem)=>
       prevItem.filter((i) => {
-        return i.id !== id;
+        return i.id !== id; 
     }))
   }
   return (
     <div className="App">
-      <h1>Item List</h1>
-      <button onClick={()=>setShow(!show)}>Toggle</button>
+      <Title title="Listings" subtitle="Delete unnecessary items" />
+      <button className='btn' onClick={()=>setShow(!show)}>Toggle</button>
       {show && item.map((e) =>(
-        <div key={e.id}>
+        <div className='box' key={e.id}>
           <li>{e.title}</li>
-          <button onClick={() => removeItem(e.id)}>Delete</button>
+          <button className='btn delete' onClick={() => removeItem(e.id)}>Delete</button>
         </div>
       ))}
     </div>
   )
 }
-
-export default App;
