@@ -1,0 +1,16 @@
+.modal-backdrop{
+    background-color: rgba(127, 127, 127, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.modal{
+    background-color: white;
+    padding: 1.25rem 5rem;
+    border-radius: .9375rem;
+}
+.hidden{
+    display: none;
+}

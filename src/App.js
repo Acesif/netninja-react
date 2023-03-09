@@ -1,8 +1,10 @@
 import './App.css';
 import React from 'react'
 import Title from './components/Title'
+import Modal from './components/Modal'
 
 export default function App() {
+  let [modal, changeModal] = React.useState(true);
   let [show,setShow] = React.useState(false);
   let [item,setItem] = React.useState([
     {title:"green", id:1},
@@ -26,6 +28,18 @@ export default function App() {
           <button className='btn delete' onClick={() => removeItem(e.id)}>Delete</button>
         </div>
       ))}
+    {modal && <Modal >
+        <h2>
+          Humanity is Dead
+        </h2>
+        <h2>
+          Blood is Fuel
+        </h2>
+        <h2>
+          Hell is Full
+        </h2>
+        <button onClick={() => changeModal(false)}>Close</button>
+    </Modal>}
     </div>
   )
 }
