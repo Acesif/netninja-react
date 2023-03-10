@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import Title from './components/Title'
 import Modal from './components/Modal'
+import EventList from './components/EventList';
 
 export default function App() {
   let [modal, changeModal] = React.useState(false);
@@ -23,12 +24,7 @@ export default function App() {
       <Title title="Listings" subtitle="Delete unnecessary items" />
       <button className='btn' onClick={()=>setShow(!show)}>Toggle</button>
       <button className='btn' onClick={()=> changeModal(true)}>Show Modal</button>
-      {show && item.map((e) =>(
-        <div className='box' key={e.id}>
-          <li>{e.title}</li>
-          <button className='btn delete' onClick={() => removeItem(e.id)}>Delete</button>
-        </div>
-      ))}
+      {show && <EventList item={item} remove={removeItem}/>}
     {modal && <Modal >
         <h2>
           Humanity is Dead
