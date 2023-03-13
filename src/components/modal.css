@@ -7,7 +7,7 @@
     position: fixed;
 }
 .modal{
-    background-color: white;
+    background-color: rgb(255, 229, 200);
     padding: 1.25rem 5rem;
     border-radius: .9375rem;
 }

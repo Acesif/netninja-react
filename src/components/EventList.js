@@ -1,4 +1,5 @@
 import React from 'react'
+import './eventlist.css'
 
 export default function EventList({item,remove}) {
   return (
